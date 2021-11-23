@@ -10,6 +10,9 @@ import ColorDescriptor
 import Searcher
 import argparse
 import cv2
+from google.colab.patches import cv2_imshow
+from PIL import Image as im
+
 
 # creating the argument parser and parsing the arguments
 ap = argparse.ArgumentParser()
@@ -24,6 +27,7 @@ cd = ColorDescriptor.ColorDescriptor((8,12,3))
 #loading the query image and describe it
 query = cv2.imread(args["query"])
 
+#extract query image feature[color]
 queryFeatures = cd.describe(query)
 
 #performing the search
@@ -33,7 +37,9 @@ results = s1.search(queryFeatures)
 
 
 #displaying the query
-cv2.imshow("Query",query)
+qimage = im.fromarray(query)
+qimage.save('/content/Content-Based-Image-Retrieval/Src/output/query.jpg')
+
 
 #loop over the results
 
@@ -41,5 +47,7 @@ for (score, resultID) in results:
     #load the result image and display it
     result1 = cv2.imread(args["result_path"] + "/" + resultID)
     result = cv2.resize(result1,(300,300))
-    cv2.imshow("Result",result)
+    data = im.fromarray(result)
+    data.save('/content/Content-Based-Image-Retrieval/Src/output/result.jpg')
+    # cv2_imshow(data)
     cv2.waitKey(0)
