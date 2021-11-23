@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 14 00:31:37 2019
 
-@author: aayush
-"""
 
 import ColorDescriptor
 import Searcher

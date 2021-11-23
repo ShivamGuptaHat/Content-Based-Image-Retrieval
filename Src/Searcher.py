@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 13 22:57:48 2019
 
-@author: aayush
-"""
 
 import numpy as np
 import csv

@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar  1 19:53:54 2019
-
-@author: aayush
-"""
 
 import ColorDescriptor
 
