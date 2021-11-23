@@ -42,12 +42,13 @@ qimage.save('/content/Content-Based-Image-Retrieval/Src/output/query.jpg')
 
 
 #loop over the results
-
+i = 0
 for (score, resultID) in results:
     #load the result image and display it
     result1 = cv2.imread(args["result_path"] + "/" + resultID)
     result = cv2.resize(result1,(300,300))
     data = im.fromarray(result)
-    data.save('/content/Content-Based-Image-Retrieval/Src/output/result.jpg')
+    data.save('/content/Content-Based-Image-Retrieval/Src/output/result_%s.jpg'% i)
+    i += 1
     # cv2_imshow(data)
     cv2.waitKey(0)
