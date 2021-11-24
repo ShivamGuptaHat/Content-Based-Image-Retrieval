@@ -2,6 +2,8 @@ import numpy as np
 import cv2
 import imutils
 
+
+# Descriptor module
 class ColorDescriptor:
     def __init__(self, bins):
         #Storing number of bins for histogram
